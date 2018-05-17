@@ -13,14 +13,14 @@ android {
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion sdkVersion
+        targetSdkVersion targetApi
         project.archivesBaseName = "android-adapters"
     }
 }
 
 dependencies {
-    provided "com.android.support:recyclerview-v7:${supportLibraryVersion}"
-    provided "io.realm:realm-android-library:${realmVersion}"
+    compileOnly "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+    compileOnly "io.realm:realm-android-library:${realmVersion}"
 }
 
 task findbugs(type: FindBugs) {
